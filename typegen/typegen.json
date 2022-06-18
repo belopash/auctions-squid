@@ -1,0 +1,14 @@
+{
+  "outDir": "../src/types/generated",
+  "chainVersions": "./versions.json",
+  "typesBundle": "kusama",
+  "events": [
+    "Auctions.AuctionStarted",
+    "Auctions.AuctionClosed",
+    "Auctions.BidAccepted"
+  ],
+  "calls": [
+  ],
+  "storage": [
+  ]
+}

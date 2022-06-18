@@ -1,0 +1,35 @@
+type Auction @entity {
+  id: ID!
+  index: Int!
+  start: Int!
+  endingPeriodStart: Int!
+  end: Int
+  firstPeriod: Int!
+  lastPeriod: Int!
+  status: AuctionStatus!
+  bids: [Bid!] @derivedFrom(field: "auction")
+}
+
+enum AuctionStatus {
+  Started
+  Closed
+  Cancelled
+}
+
+type Bid @entity {
+  id: ID!
+  paraId: Int!
+  auction: Auction!
+  blockNumber: Int!
+  timestamp: DateTime!
+  firstSlot: Int!
+  lastSlot: Int!
+  amount: BigInt!
+  type: BidType!
+  bidder: String!
+}
+
+enum BidType {
+  Bid
+  Crowdloan
+}
