@@ -11,7 +11,7 @@ import {
 } from './types/generated/events'
 import * as ss58 from '@subsquid/ss58'
 
-const database = new TypeormDatabase(`parachain_staking_squid`)
+const database = new TypeormDatabase()
 const processor = new SubstrateProcessor(database)
 
 processor.setBlockRange({ from: 7468792 })
